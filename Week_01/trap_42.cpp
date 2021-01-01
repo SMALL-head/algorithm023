@@ -10,7 +10,7 @@ public:
         for(int i = 0; i < height.size(); ++i)
         {
             while(!stk.empty() && height[stk.top()] < height[i])
-            {
+            {//curIdx是接雨水的待计算的容器底部，与之后会计算的两端高度一起计算这部分的容量
                 int curIdx = stk.top();
                 stk.pop();
                 while(!stk.empty() && height[stk.top()] == height[curIdx])
